@@ -13,20 +13,44 @@ function writePassword() {
 
 function generatePassword(){
   var passwordLength = prompt("This password needs to be between 8 and 128 characters. How many characters do you wish to have?")
-    if (passwordLength < 8 || passwordLength > 128) {
-      return
+
+  if (passwordLength < 8 || passwordLength > 128) {
+       prompt("Password length doesn't meet criteria. Please enter valid length")     
+    } 
+
+    var lowercaseChoice = confirm("Do you want to include lowercase letters?")
+    console.log(lowercaseChoice)
+    var uppercaseChoice = confirm("Do you want to include uppercase letters? ")
+    var numericChoice = confirm("Do you want to include numberic characters")
+      
+    var passwordString =""
+    var testString = ""
+    var lowercase = "abcdefghijklmnopqrstuvwxyz";
+    var uppercase = lowercase.toUpperCase();
+          // console.log("uppercase;",uppercase)
+    var numeric = "0123456789";
+    var specialCharacters = "";
+
+    if(lowercaseChoice){
+      testString += lowercase
     }
+    if(uppercaseChoice){
+      testString += uppercase
+    }
+    if(numericChoice){
+      testString += numeric
+    }
+ 
+    var testStringArr= testString.split("")
+    // console.log(testStringArr)
 
-  var lowercase = "abcdefghijklmnopqrstuvwxyz";
-  var uppercase = "";
-  var numberic = "";
-  var specialCharacters = "";
-
-  var lowercaseChoice = confirm("Do you want to include lowercase letters?")
-  var uppercaseChoice = confirm("Do you want to include uppercase letters? ")
+// for(var i = 0; testStringArr.length; i=++)
+  var randomIndex = Math.floor(Math.random()*testStringArr.length)
+  var randomChar = testStringArr[randomIndex]
+  console.log(randomChar)
 
   
-  return passwordLength
+  return passwordString
 }
 
 // Add event listener to generate button
