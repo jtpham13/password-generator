@@ -21,8 +21,10 @@ function generatePassword(){
     var lowercaseChoice = confirm("Do you want to include lowercase letters?")
     console.log(lowercaseChoice)
     var uppercaseChoice = confirm("Do you want to include uppercase letters? ")
-    var numericChoice = confirm("Do you want to include numberic characters")
-      
+    var numericChoice = confirm("Do you want to include numberic characters?")
+    var specialCharactersChoice = confirm("Do you want to include special characters?")
+    
+
     var passwordString =""
     var testString = ""
     var lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -40,16 +42,22 @@ function generatePassword(){
     if(numericChoice){
       testString += numeric
     }
- 
+    if(numericChoice){
+      testString += numeric
+    }
     var testStringArr= testString.split("")
     // console.log(testStringArr)
 
 // for(var i = 0; testStringArr.length; i=++)
-  var randomIndex = Math.floor(Math.random()*testStringArr.length)
+  
+
+  for( var i = 0; i <=passwordLength; i++){
+    var randomIndex = Math.floor(Math.random()*testStringArr.length)
   var randomChar = testStringArr[randomIndex]
   console.log(randomChar)
-
-  
+  passwordString+=randomChar
+  }
+  console.log(passwordString)
   return passwordString
 }
 
