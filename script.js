@@ -31,7 +31,7 @@ function generatePassword(){
     var uppercase = lowercase.toUpperCase();
           // console.log("uppercase;",uppercase)
     var numeric = "0123456789";
-    var specialCharacters = "";
+    var specialCharacters = "!@#$%^&*()><";
 
     if(lowercaseChoice){
       testString += lowercase
@@ -42,15 +42,15 @@ function generatePassword(){
     if(numericChoice){
       testString += numeric
     }
-    if(numericChoice){
-      testString += numeric
+    if(specialCharactersChoice){
+      testString += specialCharacters
     }
     var testStringArr= testString.split("")
     // console.log(testStringArr)
 
 // for(var i = 0; testStringArr.length; i=++)
   
-
+// for loop to make random password
   for( var i = 0; i <=passwordLength; i++){
     var randomIndex = Math.floor(Math.random()*testStringArr.length)
   var randomChar = testStringArr[randomIndex]
