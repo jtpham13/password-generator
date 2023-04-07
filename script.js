@@ -10,7 +10,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+// added function
 function generatePassword(){
   var passwordLength = prompt("This password needs to be between 8 and 128 characters. How many characters do you wish to have?")
 
